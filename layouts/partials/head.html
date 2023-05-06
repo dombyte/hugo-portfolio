@@ -18,7 +18,7 @@
 
 
 <!-- Font Awesome CSS -->
-{{ $fa := resources.Get "css/all.min.css"}}
+{{ $fa := resources.Get "css/all.css" | minify | resources.PostCSS}}
 <link rel="stylesheet" href="{{ $fa.RelPermalink | absURL}}" media="all">
 
 
