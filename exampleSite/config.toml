@@ -5,6 +5,9 @@ theme = "hugo-portfolio"
 googleAnalytics = "UA-XXXXXXXXX-X"
 enableRobotsTXT = true
 
+[build]
+  writeStats = true
+
 [params]
 	# favicon = "/images/fav.png"
 	home_title = "Hi, I'am ...."
