@@ -1,0 +1,24 @@
+{
+  "name": "hugo-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dombyte/hugo-portfolio.git"
+  },
+  "author": "Dominik Wenninger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dombyte/hugo-portfolio/issues"
+  },
+  "homepage": "https://github.com/dombyte/hugo-portfolio#readme",
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "postcss": "^8.4.23",
+    "postcss-cli": "^10.1.0"
+  }
+}
