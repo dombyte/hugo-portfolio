@@ -23,3 +23,11 @@ enableRobotsTXT = true
       unsafe = true
 
 
+# [[params.plugins.js]]
+# link = "plugins/js/"
+    
+# [[params.plugins.js]]
+# link = "plugins/js/"
+    
+# [[params.plugins.js]]
+# link = "https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.9/dist/cookieconsent.js"
