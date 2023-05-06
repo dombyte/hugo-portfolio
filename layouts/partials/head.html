@@ -14,22 +14,14 @@
 <meta property="og:url" content="{{.RelPermalink  | absURL }}">
 <!-- {{ template "_internal/google_analytics.html" . }} -->
 
-<!-- Build Main CSS from SCSS -->
-{{ $sass := resources.Get "sass/main.scss" }}
-{{ $style := $sass | resources.ToCSS }}
-{{ $maincss := slice  $style | resources.Concat "css/main.css" | minify | fingerprint  }}
 
 
-<!-- {{ $sass := resources.Get "sass/main.scss" }}
-{{ $style := $sass | resources.ToCSS }}
-{{ $css := slice  $style | resources.Concat "css/bundle.css" }}
-<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}"> -->
 
 <!-- Font Awesome CSS -->
 {{ $fa := resources.Get "css/all.min.css"}}
 <link rel="stylesheet" href="{{ $fa.RelPermalink | absURL}}" media="all">
 
-<!-- <link rel="stylesheet" href="/css/all.min.css" media="all"> -->
+
 
 
 
@@ -37,7 +29,10 @@
 {{ $bsutils := resources.Get "css/bootstrap-4-utilities.css" | resources.PostCSS | minify | resources.PostProcess}}
 <link rel="stylesheet" href="{{ $bsutils.RelPermalink | absURL}}" media="all">
 
-
+<!-- Build Main CSS from SCSS -->
+{{ $sass := resources.Get "sass/main.scss" }}
+{{ $style := $sass | resources.ToCSS }}
+{{ $maincss := slice  $style | resources.Concat "css/main.css" | minify | fingerprint  }}
 <link rel="stylesheet" href="{{ $maincss.Permalink | absURL}}" integrity="{{ $maincss.Data.Integrity }}">
 
 
