@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "(cd exampleSite && hugo server -t ../.. --disableFastRender --baseURL http://localhost:1313)",
-    "build": "(cd exampleSite && hugo -t ../.. --minify --cleanDestinationDir --baseURL https://newsroom.itsdom.org)"
+    "dev": "(cd exampleSite && hugo server -t ../.. --minify --disableFastRender --ignoreCache --noHTTPCache --environment production --baseURL http://localhost:1313)",
+    "build": "(cd exampleSite && hugo -t ../.. --minify --cleanDestinationDir --environment production --baseURL https://newsroom.itsdom.org)"
   },
   "repository": {
     "type": "git",
