@@ -18,14 +18,14 @@
 
 
 <!-- Font Awesome CSS -->
-{{ $fa := resources.Get "css/all.css" | minify | resources.PostCSS}}
+{{ $fa := resources.Get "css/all.css" | minify}}
 <link rel="stylesheet" href="{{ $fa.RelPermalink | absURL}}" media="all">
 
 
 
 
 
-<!-- Bootstrap 4 Utils with PurgeCSs via PostCSS -->
+<!-- Bootstrap 4 Utils with PurgeCSS via PostCSS -->
 {{ $bsutils := resources.Get "css/bootstrap-4-utilities.css" | resources.PostCSS | minify | resources.PostProcess}}
 <link rel="stylesheet" href="{{ $bsutils.RelPermalink | absURL}}" media="all">
 
