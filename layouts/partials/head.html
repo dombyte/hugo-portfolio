@@ -14,18 +14,23 @@
 <meta property="og:url" content="{{.RelPermalink  | absURL }}">
 <!-- {{ template "_internal/google_analytics.html" . }} -->
 
-<!-- Bundle Main CSS and Build from SCSS -->
+<!-- Build Main CSS from SCSS -->
 {{ $sass := resources.Get "sass/main.scss" }}
 {{ $style := $sass | resources.ToCSS }}
 {{ $maincss := slice  $style | resources.Concat "css/main.css" | minify | fingerprint  }}
 <link rel="stylesheet" href="{{ $maincss.Permalink | absURL}}" integrity="{{ $maincss.Data.Integrity }}">
 
+<!-- Font Awesome CSS
+{{ $fa := resources.Get "css/all.min.css"}}
+<link rel="stylesheet" href="{{ $fa.RelPermalink | absURL}}" media="all"> -->
 
 <link rel="stylesheet" href="/css/all.min.css" media="all">
 
-<!-- Bundle Bootstrap 4 CSS and PostCSS -->
-{{ $main := resources.Get "css/bootstrap-4-utilities.css" | resources.PostCSS | minify | resources.PostProcess}}
-<link rel="stylesheet" href="{{ $main.RelPermalink | absURL}}">
+
+
+<!-- Bootstrap 4 Utils with PurgeCSs via PostCSS -->
+{{ $bsutils := resources.Get "css/bootstrap-4-utilities.css" | resources.PostCSS | minify | resources.PostProcess}}
+<link rel="stylesheet" href="{{ $bsutils.RelPermalink | absURL}}">
 
 
 
