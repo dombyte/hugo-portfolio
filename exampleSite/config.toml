@@ -1,0 +1,25 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Hugo Portfolio"
+theme = "hugo-portfolio"
+googleAnalytics = "UA-XXXXXXXXX-X"
+enableRobotsTXT = true
+
+[params]
+	# favicon = "/images/fav.png"
+	home_title = "Hi, I'am ...."
+	home_subtitle = "FullStack Web Developer"
+	home_description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptate."
+	github = ""
+	linkedin = ""
+	dribbble = ""
+	phone = ""
+	email = ""
+	location = ""
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+
