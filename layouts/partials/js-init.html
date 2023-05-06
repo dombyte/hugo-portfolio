@@ -1,0 +1,21 @@
+{{ $main := resources.Get "js/main.js" }}
+{{ $js := slice $main | resources.Concat "js/bundle.js" | minify | fingerprint }}
+<script type="text/javascript"   src="{{ $js.Permalink }}"></script>
+
+
+
+
+{{ "<!-- JS Plugins Bundeling loaded from assets -->" | safeHTML }}
+{{ $jsBundle := slice }}
+{{ range .Site.Params.plugins.js }}
+{{ if findRE "^http" .link }}
+<script type="text/javascript" src="{{ .link | absURL }}"></script>
+{{ else }}
+{{ $jsFile := resources.Get .link | minify }}
+{{ $jsBundle = $jsBundle | append $jsFile }}
+{{ end }}
+{{ end }}
+{{ if ne (len $jsBundle) 0 }}
+{{ $jsBundle := $jsBundle | resources.Concat "js/plugins.js" | fingerprint }}
+<script type="text/javascript" src="{{ $jsBundle.Permalink | absURL }}"></script>
+{{ end }}
