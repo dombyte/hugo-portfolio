@@ -36,7 +36,7 @@ const selectedIcon = localStorage.getItem('selected-icon');
 
 //web obtan the current
 const getCurrentTheme = ()=> document.body.classList.contains(darkTheme)?'dark':'light';
-const getCurrentIcon = () => themeButton.querySelector('.fa').classList.contains('fa-moon') ? 'fa-moon' : 'fa-sun';
+const getCurrentIcon = ()=> themeButton.classList.contains(iconTheme)?'fa-moon':'fa-sun';
 
 if(selectedTheme){
     // if the validation fullfill
