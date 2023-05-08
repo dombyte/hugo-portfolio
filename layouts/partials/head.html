@@ -19,6 +19,14 @@
 {{ $fa := resources.Get "css/all_new.css" | minify}}
 <link rel="stylesheet" href="{{ $fa.RelPermalink | absURL}}" media="all">
 
+<!-- 
+{{ $fa1 := resources.Get "css/fontawesome.css" | minify}}
+<link rel="stylesheet" href="{{ $fa1.RelPermalink | absURL}}" media="all">
+{{ $fa2 := resources.Get "css/brands.css" | minify}}
+<link rel="stylesheet" href="{{ $fa2.RelPermalink | absURL}}" media="all">
+{{ $fa3 := resources.Get "css/regular.css" | minify}}
+<link rel="stylesheet" href="{{ $fa3.RelPermalink | absURL}}" media="all"> -->
+
 <!-- Bootstrap 4 Utils with PurgeCSS via PostCSS -->
 {{ $bsutils := resources.Get "css/bootstrap-4-utilities.css" | resources.PostCSS | minify | resources.PostProcess}}
 <link rel="stylesheet" href="{{ $bsutils.RelPermalink | absURL}}" media="all">
